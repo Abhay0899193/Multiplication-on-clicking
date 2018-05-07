@@ -2,7 +2,7 @@
 
 int main()
 {
-std::cout<<"initialized";
+std::cout<<"initialized\n";
 return 0;
 }
 
