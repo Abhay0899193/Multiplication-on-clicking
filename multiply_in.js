@@ -1,5 +1,3 @@
-
-
 mergeInto(LibraryManager.library, {
   multiply_in_js: function(x,y) {
   
