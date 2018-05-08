@@ -2,29 +2,26 @@
 <head>
 <script src="index.js"></script>
 <script>
+
 multiply = Module.cwrap("multiply","number",["number"]);
 
 var x1,x2;
+
 function output(text) {
 
-    document.getElementById("output_area").append(text + "\n\n");
+	document.getElementById("output_area").append(text + "\n\n");
 
-  }
+	}
 
-function outputonclick(t1,t2,t3) {
 
-document.getElementById("output_area").append("Multiplying in js :"+t1+"*"+t2+" = "+t3+"\n\n");
- 
-} 
+function clickEvent() {
 
-function clickEvent(){
-//output(x1);
-//output(x2);
-var x3;
-x3 = multiply(x1,x2);
-output(x3);
-//output(x3)
-}
+	var x3;
+	x3 = multiply(x1,x2);
+	output(x3);
+
+	}
+
   var Module = {
 
     'print': function (text) {
@@ -38,20 +35,28 @@ output(x3);
       output("printErr\n" + text);
 
     },
+    
+    'onRuntimeInitialized': function() {
+
+    clickEvent();
+
+  },
 
   };
 
-function readMouseMove(e){
+function readMouseMove(e){ 
 
-x1 = e.clientX;
-x2 = e.clientY;
-}
+	x1 = e.clientX;
+	x2 = e.clientY;
+
+	}
+
 document.onmousemove = readMouseMove;
 
 </script>
 
 <title>
-test1</title>
+ClickMe</title>
 </head>
 <body>
 
