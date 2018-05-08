@@ -3,6 +3,7 @@
 <script src="index.js"></script>
 <script>
 multiply = Module.cwrap("multiply","number",["number"]);
+
 var x1,x2;
 function output(text) {
 
@@ -21,7 +22,7 @@ function clickEvent(){
 //output(x2);
 var x3;
 x3 = multiply(x1,x2);
-outputonclick(x1,x2,x3);
+output(x3);
 //output(x3)
 }
   var Module = {
