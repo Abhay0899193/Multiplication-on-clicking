@@ -1,18 +1,21 @@
-#include <iostream>
 
-int main()
-{
-std::cout<<"initialized\n";
-return 0;
-}
+#include <emscripten.h>
+#include<stdio.h>
 
 extern "C" {
 
+  extern int multiply_in_js(float x, float y);
+
+}
+
+
+
+extern "C" {
 int multiply(float x, float y)
 
 {
 
-    return x * y;
+    return multiply_in_js(x, y);
 
 }
 
